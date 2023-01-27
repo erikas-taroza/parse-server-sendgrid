@@ -1,4 +1,5 @@
-import { setApiKey, send, MailDataRequired } from "@sendgrid/mail";
+import sg, { MailDataRequired } from "@sendgrid/mail";
+const { setApiKey, send } = sg;
 
 type MailOptions = {
     to?:string,
@@ -8,7 +9,7 @@ type MailOptions = {
     html?:string
 };
 
-export let ParseServerSendGrid = ({
+let ParseServerSendGrid = ({
     apiKey,
     from,
     passwordResetTemplateId,
