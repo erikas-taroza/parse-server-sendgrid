@@ -8,11 +8,11 @@ type MailOptions = {
     html?:string
 };
 
-export default ({
+let ParseServerSendGrid = ({
     apiKey,
     from,
     passwordResetTemplateId,
-    verificationTemplateId,
+    verificationTemplateId
 }) => {
     var missing:string | undefined;
 
@@ -90,9 +90,11 @@ export default ({
         });
     };
 
-    return {
+    return Object.freeze({
         sendMail,
-        sendVerificationEmail,
-        sendPasswordResetEmail
-    };
+        sendPasswordResetEmail,
+        sendVerificationEmail
+    });
 };
+
+export default ParseServerSendGrid;
