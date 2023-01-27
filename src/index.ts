@@ -8,7 +8,7 @@ type MailOptions = {
     html?:string
 };
 
-let ParseServerSendGrid = ({
+export let ParseServerSendGrid = ({
     apiKey,
     from,
     passwordResetTemplateId,
