@@ -81,7 +81,7 @@ let ParseServerSendGrid = ({
         let to = user.get("email") || user.get("username");
         return sendMail({
             to,
-            templateId: passwordResetTemplateId,
+            templateId: verificationTemplateId,
             templateData: {
                 link,
                 appName,
