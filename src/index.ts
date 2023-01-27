@@ -1,5 +1,4 @@
 import sg, { MailDataRequired } from "@sendgrid/mail";
-const { setApiKey, send } = sg;
 
 type MailOptions = {
     to?:string,
@@ -24,7 +23,7 @@ let ParseServerSendGrid = ({
 
     if(missing) { throw `The ${missing} is needed to send emails with SendGrid`; }
 
-    setApiKey(apiKey);
+    sg.setApiKey(apiKey);
 
     const sendMail = ({
         to,
@@ -54,7 +53,7 @@ let ParseServerSendGrid = ({
             }
         }
 
-        return send(email!);
+        return sg.send(email!);
     };
 
     const sendPasswordResetEmail = ({
